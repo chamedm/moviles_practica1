@@ -33,6 +33,8 @@ flutter:
 
   assets:
     - assets/images/app_icon.png
+    - assets/images/logo.png
+    - assets/images/logo_claro.png
   #   - images/a_dot_ham.jpeg
 
   # fonts:

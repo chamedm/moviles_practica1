@@ -9,45 +9,99 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  var _nameInputController = TextEditingController();
+  var _emailInputController = TextEditingController();
+  var _pswInputController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              stops: [0.5, 0.9],
-              colors: [Color.fromRGBO(33, 66, 85, 1.0), Colors.black])),
-      child: Padding(
-        padding: EdgeInsets.all(20),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Padding(
-                padding: EdgeInsets.only(top: 50),
-                child:
-                    Image(image: AssetImage('assets/images/logo_claro.png'))),
-            Row(children: [
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.only(top: 80),
-                  child: MaterialButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    height: 50,
-                    elevation: 2,
-                    onPressed: () {},
-                    color: SECONDARY_COLOR[400],
-                    child: Text(
-                      "REGISTRATE",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                stops: [0.5, 0.9],
+                colors: [Color.fromRGBO(33, 66, 85, 1.0), Colors.black])),
+        child: Padding(
+          padding: EdgeInsets.all(20),
+          child: ListView(
+            children: [
+              Padding(
+                  padding: EdgeInsets.only(top: 50),
+                  child:
+                      Image(image: AssetImage('assets/images/logo_claro.png'))),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: TextField(
+                    controller: _nameInputController,
+                    keyboardType: TextInputType.name,
+                    decoration: InputDecoration(
+                      hoverColor: Colors.white,
+                      focusColor: Colors.white,
+                      fillColor: Colors.white,
+                      filled: true,
+                      border: OutlineInputBorder(),
+                      labelText: "Nombre completo",
+                      labelStyle: TextStyle(color: Colors.black, fontSize: 15),
+                      floatingLabelBehavior: FloatingLabelBehavior.auto,
+                    )),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: TextField(
+                    controller: _emailInputController,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      hoverColor: Colors.white,
+                      focusColor: Colors.white,
+                      fillColor: Colors.white,
+                      filled: true,
+                      border: OutlineInputBorder(),
+                      labelText: "Email",
+                      labelStyle: TextStyle(color: Colors.black, fontSize: 15),
+                      floatingLabelBehavior: FloatingLabelBehavior.auto,
+                    )),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: TextField(
+                    obscureText: true,
+                    controller: _pswInputController,
+                    keyboardType: TextInputType.visiblePassword,
+                    decoration: InputDecoration(
+                      hoverColor: Colors.white,
+                      focusColor: Colors.white,
+                      fillColor: Colors.white,
+                      filled: true,
+                      border: OutlineInputBorder(),
+                      labelText: "Password",
+                      labelStyle: TextStyle(color: Colors.black, fontSize: 15),
+                      floatingLabelBehavior: FloatingLabelBehavior.auto,
+                    )),
+              ),
+              Row(children: [
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 50),
+                    child: MaterialButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      height: 50,
+                      elevation: 2,
+                      onPressed: () {},
+                      color: SECONDARY_COLOR[400],
+                      child: Text(
+                        "REGISTRATE",
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ]),
-          ],
+              ]),
+            ],
+          ),
         ),
       ),
     );

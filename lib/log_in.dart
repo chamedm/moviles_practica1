@@ -70,11 +70,13 @@ class _LogInState extends State<LogIn> {
                 elevation: 2,
                 color: SECONDARY_COLOR[400],
                 child: Text(
-                  "INGRESA",
+                  "ENTRAR",
                   style: TextStyle(
                       color: Colors.black, fontWeight: FontWeight.bold),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed("/home");
+                },
               ),
             ),
             Padding(

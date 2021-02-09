@@ -89,17 +89,36 @@ class _RegisterState extends State<Register> {
                           borderRadius: BorderRadius.circular(10)),
                       height: 50,
                       elevation: 2,
-                      onPressed: () {},
                       color: SECONDARY_COLOR[400],
                       child: Text(
                         "REGISTRATE",
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
+                      onPressed: () {
+                        Navigator.of(context).pushNamed("/home");
+                      },
                     ),
                   ),
                 ),
               ]),
+              Padding(
+                padding: const EdgeInsets.only(top: 100, bottom: 10),
+                child: Text(
+                  "¿Ya tienes cuenta?",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              Text(
+                "INGRESA",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
             ],
           ),
         ),

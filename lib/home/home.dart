@@ -62,13 +62,7 @@ class _HomeState extends State<Home> {
   void _openHotDrinksPage() {
     // TODO: completar en navigator pasando los parametros a la pagina de HotDrinksPage
 
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) {
-          return null;
-        },
-      ),
-    );
+    Navigator.of(context).pushNamed("/hotDrinks");
   }
 
   void _openGrainsPage() {

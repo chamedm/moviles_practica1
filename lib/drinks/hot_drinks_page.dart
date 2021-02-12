@@ -13,13 +13,33 @@ class HotDrinksPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bebidas"),
+        title: Text("Bebidas calientes"),
       ),
       body: ListView.builder(
+        padding: EdgeInsets.all(5),
         itemCount: drinksList.length,
         itemBuilder: (BuildContext context, int index) {
-          return ItemHotDrinks(
-            drink: drinksList[index],
+          return Padding(
+            padding: EdgeInsets.only(top: 20),
+            child: ListTile(
+              dense: true,
+              trailing: Image.network(
+                "${drinksList[index].productImage}",
+                fit: BoxFit.fill,
+              ),
+              title: Padding(
+                padding: EdgeInsets.only(top: 10),
+                child: Text(
+                  "${drinksList[index].productTitle}",
+                  style: TextStyle(fontSize: 30),
+                ),
+              ),
+              subtitle: Text(
+                "\$\ ${drinksList[index].productPrice}",
+                style: TextStyle(fontSize: 20, color: Colors.black),
+              ),
+              onTap: () => {},
+            ),
           );
         },
       ),

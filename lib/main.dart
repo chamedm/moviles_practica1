@@ -10,7 +10,7 @@ import 'log_in.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  var hotDrinksList = ProductRepository.loadProducts(ProductType.BEBIDAS);
+  final hotDrinksList = ProductRepository.loadProducts(ProductType.BEBIDAS);
 
   // This widget is the root of your application.
   @override

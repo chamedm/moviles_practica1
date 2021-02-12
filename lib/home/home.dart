@@ -1,8 +1,10 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:estructura_practica_1/home/item_home.dart';
-import 'package:estructura_practica_1/profile.dart';
+import '../cups/cups_page.dart';
+import '../drinks//hot_drinks_page.dart';
+import '../grains/grains_page.dart';
+import '../models/product_repository.dart';
+import '../home/item_home.dart';
+import '../profile.dart';
 
 class Home extends StatefulWidget {
   final String title;
@@ -72,15 +74,21 @@ class _HomeState extends State<Home> {
   }
 
   void _openHotDrinksPage() {
-    // TODO: completar en navigator pasando los parametros a la pagina de HotDrinksPage
-    Navigator.of(context).pushNamed("/hotDrinks");
+    final hotDrinksList = ProductRepository.loadProducts(ProductType.BEBIDAS);
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => HotDrinksPage(drinksList: hotDrinksList)));
   }
 
   void _openGrainsPage() {
-    Navigator.of(context).pushNamed("/grains");
+    final grainsList = ProductRepository.loadProducts(ProductType.GRANO);
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => GrainsPage(grainsList: grainsList)));
   }
 
   void _openCupsPage() {
-    Navigator.of(context).pushNamed("/cups");
+    final cupList = ProductRepository.loadProducts(ProductType.TAZAS);
+
+    Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => CupsPage(cupsList: cupList)));
   }
 }

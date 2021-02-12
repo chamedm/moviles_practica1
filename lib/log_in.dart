@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home/home.dart';
 import 'utils/constants.dart';
 
 class LogIn extends StatefulWidget {
@@ -75,7 +76,8 @@ class _LogInState extends State<LogIn> {
                       color: Colors.black, fontWeight: FontWeight.bold),
                 ),
                 onPressed: () {
-                  Navigator.of(context).pushNamed("/home");
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Home(title: APP_TITLE)));
                 },
               ),
             ),

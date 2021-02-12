@@ -1,6 +1,6 @@
+import 'log_in.dart';
+import 'register.dart';
 import 'package:flutter/material.dart';
-import 'package:estructura_practica_1/utils/constants.dart';
-
 import 'utils/constants.dart';
 
 class Identity extends StatefulWidget {
@@ -46,7 +46,8 @@ class _IdentityState extends State<Identity> {
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
                       onPressed: () {
-                        Navigator.of(context).pushNamed("/register");
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => Register()));
                       },
                     ),
                   ),
@@ -68,7 +69,8 @@ class _IdentityState extends State<Identity> {
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
                       onPressed: () {
-                        Navigator.of(context).pushNamed("/logIn");
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => LogIn()));
                       },
                     ),
                   ),

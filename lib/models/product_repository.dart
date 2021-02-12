@@ -13,33 +13,38 @@ class ProductRepository {
     if (prodType == ProductType.TAZAS) {
       return <ProductCup>[
         ProductCup(
-          productTitle: "Taza tall ceramica",
-          productDescription: "Taza alta 20cm",
-          productImage: "",
+          productTitle: "Tall estampada",
+          productDescription: "Taza tall ceramica estampada",
+          productImage:
+              "https://images.unsplash.com/photo-1557846738-a374dd033326?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           productColor: ProductColor.BLACK,
         ),
         ProductCup(
-          productTitle: "Taza haza minimalista",
-          productDescription: "Taza haza partida",
-          productImage: "",
+          productTitle: "Yeti acero inoxidable",
+          productDescription: "Yeti acero inoxidable color bronce",
+          productImage:
+              "https://images.unsplash.com/photo-1603735358248-6d210cfd0f50?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=786&q=80",
           productColor: ProductColor.BLUE,
         ),
         ProductCup(
-          productTitle: "Taza ceramica",
-          productDescription: "Taza alta 15cm",
-          productImage: "",
+          productTitle: "Petite",
+          productDescription: "Taza esspresso ceramica",
+          productImage:
+              "https://images.unsplash.com/photo-1579493593557-e5afa4d230db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           productColor: ProductColor.WHITE,
         ),
         ProductCup(
-          productTitle: "Taza te con filtro",
-          productDescription: "Ideal para tizanas y té",
-          productImage: "",
+          productTitle: "Sin haza",
+          productDescription: "Taza sin haza de ceramica protectora",
+          productImage:
+              "https://images.unsplash.com/photo-1602869804805-c4692edc2bbc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=807&q=80",
           productColor: ProductColor.BLUE,
         ),
         ProductCup(
-          productTitle: "Taza asimetrica",
-          productDescription: "Edicion especial",
-          productImage: "",
+          productTitle: "Minimalista",
+          productDescription: "Edicion especial diseñador Edward Jhon",
+          productImage:
+              "https://images.unsplash.com/photo-1599225401144-5cc67ac7aa6b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           productColor: ProductColor.BLACK,
         ),
       ];

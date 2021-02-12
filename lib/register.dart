@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home/home.dart';
 import 'utils/constants.dart';
 
 class Register extends StatefulWidget {
@@ -96,7 +97,8 @@ class _RegisterState extends State<Register> {
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
                       onPressed: () {
-                        Navigator.of(context).pushNamed("/home");
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => Home(title: APP_TITLE)));
                       },
                     ),
                   ),

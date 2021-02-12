@@ -1,12 +1,13 @@
 import 'package:estructura_practica_1/drinks/item_hot_drinks.dart';
+import 'package:estructura_practica_1/grains/item_grains.dart';
+import 'package:estructura_practica_1/models/product_grains.dart';
 import 'package:flutter/material.dart';
-import 'package:estructura_practica_1/models/product_hot_drinks.dart';
 
-class HotDrinksPage extends StatelessWidget {
-  final List<ProductHotDrinks> drinksList;
-  HotDrinksPage({
+class GrainsPage extends StatelessWidget {
+  final List<ProductGrains> grainsList;
+  GrainsPage({
     Key key,
-    @required this.drinksList,
+    @required this.grainsList,
   }) : super(key: key);
 
   @override
@@ -17,9 +18,9 @@ class HotDrinksPage extends StatelessWidget {
       ),
       body: ListView.builder(
           padding: EdgeInsets.all(5),
-          itemCount: drinksList.length,
+          itemCount: grainsList.length,
           itemBuilder: (BuildContext context, int index) {
-            return ItemHotDrinks(drink: drinksList[index]);
+            return ItemGrains(grain: grainsList[index]);
           }),
     );
   }

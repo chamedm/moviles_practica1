@@ -42,11 +42,14 @@ class _HomeState extends State<Home> {
                   "https://images.unsplash.com/photo-1535403396060-dd9daec50b74?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
             ),
           ),
-          ItemHome(
-            //TODO agregar onTap cuando se tengan las pags tazas_page
-            title: "Tazas",
-            image:
-                "https://images.unsplash.com/photo-1599225401144-5cc67ac7aa6b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+          GestureDetector(
+            onTap: _openCupsPage,
+            child: ItemHome(
+              //TODO agregar onTap cuando se tengan las pags tazas_page
+              title: "Tazas",
+              image:
+                  "https://images.unsplash.com/photo-1599225401144-5cc67ac7aa6b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            ),
           ),
           ItemHome(
             title: "Granos",
@@ -54,7 +57,6 @@ class _HomeState extends State<Home> {
                 "https://images.unsplash.com/photo-1611691934391-5a8805e0bd1a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           ),
           ItemHome(
-            // TODO: Al hacer clic, que muestre un snackbar de "Proximamente"
             title: "Postres",
             image:
                 "https://images.unsplash.com/photo-1558395872-85709c6d3639?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
@@ -66,19 +68,12 @@ class _HomeState extends State<Home> {
 
   void _openHotDrinksPage() {
     // TODO: completar en navigator pasando los parametros a la pagina de HotDrinksPage
-
     Navigator.of(context).pushNamed("/hotDrinks");
   }
 
-  void _openGrainsPage() {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => null),
-    );
-  }
+  void _openGrainsPage() {}
 
-  void _openDessertPage() {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => null),
-    );
+  void _openCupsPage() {
+    Navigator.of(context).pushNamed("/cups");
   }
 }

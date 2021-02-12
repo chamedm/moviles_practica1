@@ -49,7 +49,6 @@ class _HomeState extends State<Home> {
           GestureDetector(
             onTap: _openCupsPage,
             child: ItemHome(
-              //TODO agregar onTap cuando se tengan las pags tazas_page
               title: "Tazas",
               image:
                   "https://images.unsplash.com/photo-1599225401144-5cc67ac7aa6b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",

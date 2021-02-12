@@ -17,3 +17,7 @@ const String PROFILE_PICTURE =
 // app
 const PRIMARY_COLOR = Colors.lightBlue;
 const SECONDARY_COLOR = Colors.grey;
+
+const CUPPIN_GREY = 0x8B8175;
+const CUPPIN_BLUE = 0xFF214254;
+const CUPPIN_ORANGE = 0xEC9762;

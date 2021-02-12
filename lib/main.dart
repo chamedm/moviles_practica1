@@ -1,3 +1,5 @@
+import 'package:estructura_practica_1/cart/cart.dart';
+import 'package:estructura_practica_1/models/product_item_cart.dart';
 import 'package:flutter/material.dart';
 import 'utils/constants.dart';
 import 'identity.dart';
@@ -7,6 +9,8 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  ProductItemCart productA = ProductItemCart(productTitle: "Producto A", productAmount: 8, productPrice: 150);
+  ProductItemCart productB = ProductItemCart(productTitle: "Producto B", productAmount: 8, productPrice: 150);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

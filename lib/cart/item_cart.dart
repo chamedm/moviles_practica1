@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ItemCart extends StatefulWidget {
   final dynamic product;
@@ -14,6 +15,8 @@ class ItemCart extends StatefulWidget {
 }
 
 class _ItemCartState extends State<ItemCart> {
+  final oCcy = new NumberFormat("#,###", "en_US");
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -62,7 +65,7 @@ class _ItemCartState extends State<ItemCart> {
                     IconButton(icon: Icon(Icons.add_circle_outline), onPressed: _addProd),
                     Text("${widget.product.productAmount}"),
                     IconButton(icon: Icon(Icons.remove_circle_outline), onPressed: _remProd),
-                    Text("\$${widget.product.productPrice}",
+                    Text("\$${oCcy.format(widget.product.productAmount * widget.product.productPrice) }",
                       style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 2.0),
                     ),
                   ],

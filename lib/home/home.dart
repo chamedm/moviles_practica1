@@ -1,3 +1,5 @@
+import 'package:estructura_practica_1/cart/cart.dart';
+import 'package:estructura_practica_1/models/product_item_cart.dart';
 import 'package:flutter/material.dart';
 import '../cups/cups_page.dart';
 import '../drinks//hot_drinks_page.dart';
@@ -32,7 +34,17 @@ class _HomeState extends State<Home> {
           ),
           IconButton(
             icon: Icon(Icons.shopping_cart),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder : (_) => Cart(productsList: [
+                      ProductItemCart(productTitle: "ProductoA", productPrice: 100, productAmount: 1 ),
+                      ProductItemCart(productTitle: "ProductoB", productPrice: 50, productAmount: 2 ),
+                      ProductItemCart(productTitle: "ProductoC", productPrice: 75, productAmount: 4 ),
+                    ]
+                  )
+                )
+              );
+            },
           )
         ],
       ),

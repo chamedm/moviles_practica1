@@ -38,21 +38,26 @@ class _HomeState extends State<Home> {
             onTap: _openHotDrinksPage,
             child: ItemHome(
               title: "Bebidas calientes",
-              image: "https://i.imgur.com/XJ0y9qs.png",
+              image:
+                  "https://images.unsplash.com/photo-1535403396060-dd9daec50b74?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
             ),
           ),
           ItemHome(
-            title: "Postres",
-            image: "https://i.imgur.com/fI7Tezv.png",
+            //TODO agregar onTap cuando se tengan las pags tazas_page
+            title: "Tazas",
+            image:
+                "https://images.unsplash.com/photo-1599225401144-5cc67ac7aa6b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           ),
           ItemHome(
             title: "Granos",
-            image: "https://i.imgur.com/5MZocC1.png",
+            image:
+                "https://images.unsplash.com/photo-1611691934391-5a8805e0bd1a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           ),
           ItemHome(
             // TODO: Al hacer clic, que muestre un snackbar de "Proximamente"
-            title: "Tazas",
-            image: "https://i.imgur.com/fMjtSpy.png",
+            title: "Postres",
+            image:
+                "https://images.unsplash.com/photo-1558395872-85709c6d3639?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
           ),
         ],
       ),

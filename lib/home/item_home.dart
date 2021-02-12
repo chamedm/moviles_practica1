@@ -15,36 +15,24 @@ class ItemHome extends StatelessWidget {
       height: 220,
       child: Stack(
         children: [
-          Positioned.fill(
-            top: 16,
-            child: Card(
-              elevation: 4.0,
-              margin: EdgeInsets.all(24.0),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
-              ),
-              color: Colors.indigo,
-              child: Container(height: 180),
-            ),
-          ),
           Container(
             height: 160,
             margin: EdgeInsets.only(top: 28, bottom: 24, left: 24, right: 24),
             decoration: BoxDecoration(
-              color: Colors.grey[200],
+              color: Color.fromRGBO(157, 147, 123, .8),
               borderRadius: BorderRadius.all(
-                Radius.circular(30),
+                Radius.circular(10),
               ),
             ),
             child: Row(
               children: [
                 Container(
                   margin: EdgeInsets.only(left: 16),
-                  width: 160,
+                  width: 180,
                   decoration: BoxDecoration(
-                    color: Colors.yellow[300],
+                    color: Color.fromRGBO(230, 226, 218, 1),
                     borderRadius: BorderRadius.all(
-                      Radius.circular(30),
+                      Radius.circular(10),
                     ),
                   ),
                   child: Padding(
@@ -65,15 +53,15 @@ class ItemHome extends StatelessWidget {
           Align(
             alignment: Alignment.topRight,
             child: ClipRRect(
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(5.0),
-                bottomRight: Radius.circular(5.0),
-              ),
-              child: Image.network(
-                "$image",
-                fit: BoxFit.contain,
-                height: 180,
-                width: 180,
+              borderRadius: BorderRadius.circular(10),
+              child: Padding(
+                padding: EdgeInsets.only(top: 50, right: 50),
+                child: Image.network(
+                  "$image",
+                  fit: BoxFit.cover,
+                  height: 100,
+                  width: 100,
+                ),
               ),
             ),
           ),

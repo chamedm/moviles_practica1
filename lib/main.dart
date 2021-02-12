@@ -1,4 +1,5 @@
 import 'package:estructura_practica_1/drinks/hot_drinks_page.dart';
+import 'package:estructura_practica_1/grains/grains_page.dart';
 import 'package:estructura_practica_1/models/product_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:estructura_practica_1/home/home.dart';
@@ -13,6 +14,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   final hotDrinksList = ProductRepository.loadProducts(ProductType.BEBIDAS);
   final cupList = ProductRepository.loadProducts(ProductType.TAZAS);
+  final grainsList = ProductRepository.loadProducts(ProductType.GRANO);
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,7 @@ class MyApp extends StatelessWidget {
         "/logIn": (context) => LogIn(),
         "/hotDrinks": (context) => HotDrinksPage(drinksList: hotDrinksList),
         "/cups": (context) => CupsPage(cupsList: cupList),
+        "/grains": (context) => GrainsPage(grainsList: grainsList),
         // TODO: Add routes for coffeeGrains and Cups when they have pages
       },
     );

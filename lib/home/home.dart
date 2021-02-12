@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:estructura_practica_1/home/item_home.dart';
 import 'package:estructura_practica_1/profile.dart';
@@ -51,10 +53,13 @@ class _HomeState extends State<Home> {
                   "https://images.unsplash.com/photo-1599225401144-5cc67ac7aa6b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
             ),
           ),
-          ItemHome(
-            title: "Granos",
-            image:
-                "https://images.unsplash.com/photo-1611691934391-5a8805e0bd1a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+          GestureDetector(
+            onTap: _openGrainsPage,
+            child: ItemHome(
+              title: "Granos",
+              image:
+                  "https://images.unsplash.com/photo-1611691934391-5a8805e0bd1a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            ),
           ),
           ItemHome(
             title: "Postres",
@@ -71,7 +76,9 @@ class _HomeState extends State<Home> {
     Navigator.of(context).pushNamed("/hotDrinks");
   }
 
-  void _openGrainsPage() {}
+  void _openGrainsPage() {
+    Navigator.of(context).pushNamed("/grains");
+  }
 
   void _openCupsPage() {
     Navigator.of(context).pushNamed("/cups");

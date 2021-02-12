@@ -17,32 +17,76 @@ class _ItemCartState extends State<ItemCart> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      
       margin: EdgeInsets.all(24),
-      child: Column(
-        children: <Widget>[
-          SizedBox(
-            height: 12,
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Image.network(
+                  "https://www.lavazza.it/content/dam/lavazza/products/caffe/macinato/moka/qualitaoro/new_render/tin_250_en/Tin-oro-en-250-thumb.png",
+                  fit: BoxFit.contain,
+                  width: 75,
+                  height: 75,
+                  ),
+              )
+            ],
           ),
-          Text("${widget.product.productTitle}"),
-          SizedBox(
-            height: 12,
+          Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Text("${widget.product.productTitle}",
+                          style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 2.0),
+                        ),
+                        Text("Tamanio grande"),
+                        Text("Leche light")
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Row(
+                  children: [
+                    IconButton(icon: Icon(Icons.add_circle_outline), onPressed: _addProd),
+                    Text("${widget.product.productAmount}"),
+                    IconButton(icon: Icon(Icons.remove_circle_outline), onPressed: _remProd),
+                    Text("\$${widget.product.productPrice}",
+                      style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 2.0),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-          IconButton(icon: Icon(Icons.add_circle_outline), onPressed: _addProd),
-          SizedBox(
-            height: 12,
-          ),
-          IconButton(icon: Icon(Icons.remove_circle), onPressed: _remProd),
-          SizedBox(
-            height: 12,
-          ),
-          Text("${widget.product.productAmount}"),
-          SizedBox(
-            height: 12,
-          ),
-          Text("${widget.product.productPrice}"),
-          SizedBox(
-            height: 12,
-          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 30.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15.0),
+                  child: Icon(Icons.favorite),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 15.0),
+                  child: Icon(Icons.delete),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );

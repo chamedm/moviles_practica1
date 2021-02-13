@@ -1,9 +1,12 @@
 import 'package:estructura_practica_1/models/product_cup.dart';
+import 'package:estructura_practica_1/models/product_item_cart.dart';
+import 'package:estructura_practica_1/payment.dart';
 import 'package:flutter/material.dart';
 
 class CupDetails extends StatefulWidget {
   final ProductCup cup;
-  CupDetails({Key key, @required this.cup}) : super(key: key);
+  final List<ProductItemCart> cart;
+  CupDetails({Key key, @required this.cup, this.cart}) : super(key: key);
 
   @override
   _CupDetailsState createState() => _CupDetailsState();
@@ -174,7 +177,14 @@ class _CupDetailsState extends State<CupDetails> {
                             .button
                             .copyWith(color: Colors.white),
                       ),
-                      onPressed: () => {}),
+                      onPressed: () => {
+                            widget.cart.add(new ProductItemCart(
+                                productTitle: widget.cup.productTitle,
+                                productAmount: 1,
+                                productPrice: widget.cup.productPrice,
+                                productImage: widget.cup.productImage,
+                                typeOfProduct: "Tazas"))
+                          }),
                   MaterialButton(
                       minWidth: 150,
                       height: 50,
@@ -188,7 +198,10 @@ class _CupDetailsState extends State<CupDetails> {
                             .button
                             .copyWith(color: Colors.white),
                       ),
-                      onPressed: () => {})
+                      onPressed: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => Payment()));
+                      })
                 ],
               ),
             )

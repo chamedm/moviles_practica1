@@ -1,9 +1,16 @@
+import 'package:estructura_practica_1/models/product_item_cart.dart';
+
 import '../models/product_hot_drinks.dart';
 import 'package:flutter/material.dart';
 
+import '../payment.dart';
+
 class HotDrinksDetails extends StatefulWidget {
   final ProductHotDrinks drink;
-  HotDrinksDetails({Key key, @required this.drink}) : super(key: key);
+  final List<ProductItemCart> cart;
+
+  HotDrinksDetails({Key key, @required this.drink, this.cart})
+      : super(key: key);
 
   @override
   _HotDrinksDetailsState createState() => _HotDrinksDetailsState();
@@ -180,7 +187,14 @@ class _HotDrinksDetailsState extends State<HotDrinksDetails> {
                             .button
                             .copyWith(color: Colors.white),
                       ),
-                      onPressed: () => {}),
+                      onPressed: () => {
+                            widget.cart.add(new ProductItemCart(
+                                productTitle: widget.drink.productTitle,
+                                productAmount: 1,
+                                productPrice: widget.drink.productPrice,
+                                productImage: widget.drink.productImage,
+                                typeOfProduct: "Bebida"))
+                          }),
                   MaterialButton(
                       minWidth: 150,
                       height: 50,
@@ -194,7 +208,10 @@ class _HotDrinksDetailsState extends State<HotDrinksDetails> {
                             .button
                             .copyWith(color: Colors.white),
                       ),
-                      onPressed: () => {})
+                      onPressed: () => {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Payment()))
+                          })
                 ],
               ),
             )

@@ -1,13 +1,13 @@
 import 'package:estructura_practica_1/drinks/hot_drinks_details.dart';
+import 'package:estructura_practica_1/models/product_item_cart.dart';
 import 'package:flutter/material.dart';
 import '../models/product_hot_drinks.dart';
 
 class ItemHotDrinks extends StatefulWidget {
   final ProductHotDrinks drink;
-  ItemHotDrinks({
-    Key key,
-    this.drink,
-  }) : super(key: key);
+  final List<ProductItemCart> cart;
+
+  ItemHotDrinks({Key key, this.drink, this.cart}) : super(key: key);
 
   @override
   _ItemHotDrinksState createState() => _ItemHotDrinksState();
@@ -104,9 +104,8 @@ class _ItemHotDrinksState extends State<ItemHotDrinks> {
         ),
         onTap: () => {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => HotDrinksDetails(
-                        drink: widget.drink,
-                      )))
+                  builder: (context) =>
+                      HotDrinksDetails(drink: widget.drink, cart: widget.cart)))
             });
   }
 }

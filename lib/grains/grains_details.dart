@@ -1,9 +1,15 @@
+import 'package:estructura_practica_1/models/product_item_cart.dart';
+
 import '../models/product_grains.dart';
 import 'package:flutter/material.dart';
 
+import '../payment.dart';
+
 class GrainsDetails extends StatefulWidget {
   final ProductGrains grain;
-  GrainsDetails({Key key, @required this.grain}) : super(key: key);
+  final List<ProductItemCart> cart;
+
+  GrainsDetails({Key key, @required this.grain, this.cart}) : super(key: key);
 
   @override
   _GrainsDetailsState createState() => _GrainsDetailsState();
@@ -159,7 +165,14 @@ class _GrainsDetailsState extends State<GrainsDetails> {
                             .button
                             .copyWith(color: Colors.white),
                       ),
-                      onPressed: () => {}),
+                      onPressed: () => {
+                            widget.cart.add(new ProductItemCart(
+                                productTitle: widget.grain.productTitle,
+                                productAmount: 1,
+                                productPrice: widget.grain.productPrice,
+                                productImage: widget.grain.productImage,
+                                typeOfProduct: "Granos"))
+                          }),
                   MaterialButton(
                       minWidth: 150,
                       height: 50,
@@ -173,7 +186,10 @@ class _GrainsDetailsState extends State<GrainsDetails> {
                             .button
                             .copyWith(color: Colors.white),
                       ),
-                      onPressed: () => {})
+                      onPressed: () => {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Payment()))
+                          })
                 ],
               ),
             )

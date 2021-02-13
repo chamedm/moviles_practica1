@@ -16,7 +16,6 @@ class ItemCup extends StatefulWidget {
 class _ItemCupState extends State<ItemCup> {
   @override
   Widget build(BuildContext context) {
-    // return Container(child: Text("${widget.drink.productTitle}"));
     return GestureDetector(
         child: Container(
           height: 220,
@@ -27,7 +26,7 @@ class _ItemCupState extends State<ItemCup> {
                 margin:
                     EdgeInsets.only(top: 28, bottom: 24, left: 24, right: 24),
                 decoration: BoxDecoration(
-                  color: Color.fromRGBO(157, 147, 123, .8),
+                  color: Theme.of(context).selectedRowColor,
                   borderRadius: BorderRadius.all(
                     Radius.circular(10),
                   ),
@@ -52,10 +51,7 @@ class _ItemCupState extends State<ItemCup> {
                               padding: const EdgeInsets.all(24.0),
                               child: Text(
                                 "${widget.cup.productTitle}",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline6
-                                    .copyWith(fontWeight: FontWeight.bold),
+                                style: Theme.of(context).textTheme.headline6,
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -79,10 +75,7 @@ class _ItemCupState extends State<ItemCup> {
                               padding: const EdgeInsets.all(15.0),
                               child: Text(
                                 " \$\ ${widget.cup.productPrice}",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .subtitle1
-                                    .copyWith(fontWeight: FontWeight.bold),
+                                style: Theme.of(context).textTheme.subtitle1,
                                 textAlign: TextAlign.center,
                               ),
                             ),

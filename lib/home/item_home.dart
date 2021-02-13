@@ -19,7 +19,7 @@ class ItemHome extends StatelessWidget {
             height: 160,
             margin: EdgeInsets.only(top: 28, bottom: 24, left: 24, right: 24),
             decoration: BoxDecoration(
-              color: Color.fromRGBO(157, 147, 123, .8),
+              color: Theme.of(context).cardColor.withOpacity(.8),
               borderRadius: BorderRadius.all(
                 Radius.circular(10),
               ),

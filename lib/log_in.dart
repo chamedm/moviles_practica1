@@ -69,7 +69,7 @@ class _LogInState extends State<LogIn> {
                     borderRadius: BorderRadius.circular(10)),
                 height: 50,
                 elevation: 2,
-                color: SECONDARY_COLOR[400],
+                color: Theme.of(context).buttonColor,
                 child: Text(
                   "ENTRAR",
                   style: TextStyle(

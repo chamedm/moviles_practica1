@@ -1,7 +1,6 @@
 import 'log_in.dart';
 import 'register.dart';
 import 'package:flutter/material.dart';
-import 'utils/constants.dart';
 
 class Identity extends StatefulWidget {
   Identity({Key key}) : super(key: key);
@@ -39,11 +38,13 @@ class _IdentityState extends State<Identity> {
                           borderRadius: BorderRadius.circular(10)),
                       height: 50,
                       elevation: 2,
-                      color: SECONDARY_COLOR[400],
+                      color: Theme.of(context).buttonColor,
                       child: Text(
                         "REGISTRATE",
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                        style: Theme.of(context)
+                            .textTheme
+                            .button
+                            .copyWith(fontWeight: FontWeight.bold),
                       ),
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
@@ -62,11 +63,13 @@ class _IdentityState extends State<Identity> {
                           borderRadius: BorderRadius.circular(10)),
                       height: 50,
                       elevation: 2,
-                      color: SECONDARY_COLOR[400],
+                      color: Theme.of(context).buttonColor,
                       child: Text(
                         "INGRESA",
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                        style: Theme.of(context)
+                            .textTheme
+                            .button
+                            .copyWith(fontWeight: FontWeight.bold),
                       ),
                       onPressed: () {
                         Navigator.of(context).push(

@@ -13,6 +13,9 @@ class MyApp extends StatelessWidget {
         title: APP_TITLE,
         theme: ThemeData(
           primarySwatch: PRIMARY_COLOR,
+          buttonColor: BUTTON_COLOR,
+          cardColor: SECONDARY_COLOR,
+          selectedRowColor: THIRD_COLOR,
         ),
         // home: Home(title: APP_TITLE),
         home: new SplashScreen(

@@ -15,5 +15,7 @@ const String PROFILE_PICTURE =
     "https://dkpp.go.id/wp-content/uploads/2018/10/photo.jpg";
 
 // app
-const PRIMARY_COLOR = Colors.lightBlue;
-const SECONDARY_COLOR = Colors.grey;
+const PRIMARY_COLOR = Colors.indigo;
+const SECONDARY_COLOR = Colors.amber;
+const THIRD_COLOR = Colors.blueGrey;
+const BUTTON_COLOR = Colors.grey;

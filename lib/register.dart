@@ -90,11 +90,13 @@ class _RegisterState extends State<Register> {
                           borderRadius: BorderRadius.circular(10)),
                       height: 50,
                       elevation: 2,
-                      color: SECONDARY_COLOR[400],
+                      color: Theme.of(context).buttonColor,
                       child: Text(
                         "REGISTRATE",
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                        style: Theme.of(context)
+                            .textTheme
+                            .button
+                            .copyWith(fontWeight: FontWeight.bold),
                       ),
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(

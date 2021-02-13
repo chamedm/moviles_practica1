@@ -1,13 +1,12 @@
 import 'package:estructura_practica_1/cups/cup_details.dart';
 import 'package:estructura_practica_1/models/product_cup.dart';
+import 'package:estructura_practica_1/models/product_item_cart.dart';
 import 'package:flutter/material.dart';
 
 class ItemCup extends StatefulWidget {
   final ProductCup cup;
-  ItemCup({
-    Key key,
-    @required this.cup,
-  }) : super(key: key);
+  final List<ProductItemCart> cart;
+  ItemCup({Key key, @required this.cup, this.cart}) : super(key: key);
 
   @override
   _ItemCupState createState() => _ItemCupState();
@@ -106,6 +105,7 @@ class _ItemCupState extends State<ItemCup> {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => CupDetails(
                         cup: widget.cup,
+                        cart: widget.cart,
                       )))
             });
   }

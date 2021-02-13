@@ -5,12 +5,13 @@ class ProductItemCart {
   String productTitle;
   int productAmount;
   double productPrice;
-  final ProductType typeOfProduct;
+  String productImage;
+  String typeOfProduct;
 
-  ProductItemCart({
-    this.typeOfProduct,
-    @required this.productTitle,
-    @required this.productAmount,
-    @required this.productPrice,
-  });
+  ProductItemCart(
+      {this.typeOfProduct,
+      @required this.productTitle,
+      @required this.productAmount,
+      @required this.productPrice,
+      this.productImage});
 }

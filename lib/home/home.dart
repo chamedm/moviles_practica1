@@ -1,4 +1,8 @@
 import 'package:estructura_practica_1/cart/cart.dart';
+import 'package:estructura_practica_1/models/product_cart.dart';
+import 'package:estructura_practica_1/models/product_cup.dart';
+import 'package:estructura_practica_1/models/product_grains.dart';
+import 'package:estructura_practica_1/models/product_hot_drinks.dart';
 import 'package:estructura_practica_1/models/product_item_cart.dart';
 import 'package:flutter/material.dart';
 import '../cups/cups_page.dart';
@@ -18,6 +22,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final ProductCart uniqueCart = new ProductCart();
+  final List<ProductItemCart> cartItems = new List<ProductItemCart>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,15 +37,8 @@ class _HomeState extends State<Home> {
           IconButton(
             icon: Icon(Icons.shopping_cart),
             onPressed: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder : (_) => Cart(productsList: [
-                      ProductItemCart(productTitle: "ProductoA", productPrice: 100, productAmount: 1 ),
-                      ProductItemCart(productTitle: "ProductoB", productPrice: 50, productAmount: 2 ),
-                      ProductItemCart(productTitle: "ProductoC", productPrice: 75, productAmount: 4 ),
-                    ]
-                  )
-                )
-              );
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_) => Cart(productsList: cartItems)));
             },
           )
         ],
@@ -101,7 +100,10 @@ class _HomeState extends State<Home> {
   void _openCupsPage() {
     final cupList = ProductRepository.loadProducts(ProductType.TAZAS);
 
-    Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => CupsPage(cupsList: cupList)));
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => CupsPage(
+              cupsList: cupList,
+              cart: cartItems,
+            )));
   }
 }

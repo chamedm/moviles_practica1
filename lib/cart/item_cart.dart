@@ -16,6 +16,7 @@ class ItemCart extends StatefulWidget {
 
 class _ItemCartState extends State<ItemCart> {
   final oCcy = new NumberFormat("#,###", "en_US");
+  var _isFav = false;
 
   @override
   Widget build(BuildContext context) {
@@ -82,14 +83,23 @@ class _ItemCartState extends State<ItemCart> {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 30.0),
+            padding: const EdgeInsets.only(left: 20.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding: const EdgeInsets.only(bottom: 15.0),
-                  child: Icon(Icons.favorite),
+                  child: IconButton(
+                    icon: Icon(_isFav
+                        ? Icons.favorite
+                        : Icons.favorite_border_outlined),
+                    onPressed: () {
+                      setState(() {
+                        _isFav = !_isFav;
+                      });
+                    },
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 15.0),

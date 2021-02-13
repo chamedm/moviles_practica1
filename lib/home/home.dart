@@ -88,7 +88,10 @@ class _HomeState extends State<Home> {
   void _openHotDrinksPage() {
     final hotDrinksList = ProductRepository.loadProducts(ProductType.BEBIDAS);
     Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => HotDrinksPage(drinksList: hotDrinksList)));
+        builder: (context) => HotDrinksPage(
+              drinksList: hotDrinksList,
+              cart: cartItems,
+            )));
   }
 
   void _openGrainsPage() {

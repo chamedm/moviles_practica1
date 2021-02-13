@@ -57,7 +57,6 @@ class _PaymentState extends State<Payment> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(CUPPIN_BLUE),
         title: Text("Pagos", 
           style: TextStyle(color: Colors.white),),
         actions: <Widget>[
@@ -112,7 +111,6 @@ class _PaymentState extends State<Payment> {
   GestureDetector buildCardPayment(i,s) {
     return GestureDetector(
           child: Card(
-        color: Color(CUPPIN_GREY),
         margin: EdgeInsets.only(top: 8, bottom: 8, left : 35, right : 35),
         child: Row(
           mainAxisSize: MainAxisSize.max,

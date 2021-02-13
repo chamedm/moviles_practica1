@@ -17,21 +17,17 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: new Drawer(
+        child: Profile(),
+      ),
       appBar: AppBar(
         title: Text(widget.title),
         actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.person),
-            onPressed: () {
-              Navigator.of(context).push(
-                // TODO: Eliminar este boton y adaptar todo el contenido de la pagina de perfil en un Drawer aqui en la pantalla Home
-                MaterialPageRoute(builder: (_) => Profile()),
-              );
-            },
-          ),
           IconButton(
             icon: Icon(Icons.shopping_cart),
             onPressed: () {
@@ -74,10 +70,16 @@ class _HomeState extends State<Home> {
                   "https://images.unsplash.com/photo-1611691934391-5a8805e0bd1a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
             ),
           ),
-          ItemHome(
-            title: "Postres",
-            image:
-                "https://images.unsplash.com/photo-1558395872-85709c6d3639?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+          GestureDetector(
+            onTap: () => {
+              _scaffoldKey.currentState
+                  .showSnackBar(SnackBar(content: Text("Proximamente...")))
+            },
+            child: ItemHome(
+              title: "Postres",
+              image:
+                  "https://images.unsplash.com/photo-1558395872-85709c6d3639?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            ),
           ),
         ],
       ),

@@ -9,15 +9,13 @@ const String PROFILE_CART = "Lista de compras";
 const String PROFILE_WISHES = "Lista de deseos";
 const String PROFILE_HISTORY = "Historial de compras";
 const String PROFILE_SETTINGS = "Ajustes";
-const String PROFILE_NAME = "Anna Doe";
-const String PROFILE_EMAIL = "anna@doe.com";
+const String PROFILE_NAME = "Pedro Paramo";
+const String PROFILE_EMAIL = "pp@decomala.com";
 const String PROFILE_PICTURE =
-    "https://dkpp.go.id/wp-content/uploads/2018/10/photo.jpg";
+    "https://images.pexels.com/photos/1933873/pexels-photo-1933873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
 
 // app
-const PRIMARY_COLOR = Colors.lightBlue;
-const SECONDARY_COLOR = Colors.grey;
-
-const CUPPIN_GREY = 0xFF8B8175;
-const CUPPIN_BLUE = 0xFF214254;
-const CUPPIN_ORANGE = 0xEC9762;
+const PRIMARY_COLOR = Colors.indigo;
+const SECONDARY_COLOR = Colors.amber;
+const THIRD_COLOR = Colors.blueGrey;
+const BUTTON_COLOR = Colors.grey;

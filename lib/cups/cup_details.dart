@@ -1,25 +1,25 @@
-import '../models/product_hot_drinks.dart';
+import 'package:estructura_practica_1/models/product_cup.dart';
 import 'package:flutter/material.dart';
 
-class HotDrinksDetails extends StatefulWidget {
-  final ProductHotDrinks drink;
-  HotDrinksDetails({Key key, @required this.drink}) : super(key: key);
+class CupDetails extends StatefulWidget {
+  final ProductCup cup;
+  CupDetails({Key key, @required this.cup}) : super(key: key);
 
   @override
-  _HotDrinksDetailsState createState() => _HotDrinksDetailsState();
+  _CupDetailsState createState() => _CupDetailsState();
 }
 
-class _HotDrinksDetailsState extends State<HotDrinksDetails> {
-  var _smallSelected = true;
-  var _mediumSelected = false;
-  var _largeSelected = false;
+class _CupDetailsState extends State<CupDetails> {
+  var _whiteSelected = true;
+  var _blackSelected = false;
+  var _blueSelected = false;
   var _isFav = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("${widget.drink.productTitle}"),
+          title: Text("${widget.cup.productTitle}"),
         ),
         body: Container(
           child: ListView(children: <Widget>[
@@ -35,7 +35,7 @@ class _HotDrinksDetailsState extends State<HotDrinksDetails> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image.network(
-                      "${widget.drink.productImage}",
+                      "${widget.cup.productImage}",
                       fit: BoxFit.cover,
                       height: 200,
                       width: 200,
@@ -48,7 +48,7 @@ class _HotDrinksDetailsState extends State<HotDrinksDetails> {
               Padding(
                 padding: EdgeInsets.only(top: 20, left: 20),
                 child: Text(
-                  "${widget.drink.productTitle}",
+                  "${widget.cup.productTitle}",
                   style: Theme.of(context)
                       .textTheme
                       .headline4
@@ -71,7 +71,7 @@ class _HotDrinksDetailsState extends State<HotDrinksDetails> {
             Padding(
               padding: EdgeInsets.only(top: 20, left: 20, right: 20),
               child: Text(
-                "${widget.drink.productDescription}",
+                "${widget.cup.productDescription}",
                 style: Theme.of(context)
                     .textTheme
                     .bodyText1
@@ -92,7 +92,7 @@ class _HotDrinksDetailsState extends State<HotDrinksDetails> {
               Padding(
                 padding: EdgeInsets.only(left: 80, top: 20, right: 20),
                 child: Text(
-                  "\$\ ${widget.drink.productPrice}",
+                  "\$\ ${widget.cup.productPrice}",
                   style: Theme.of(context)
                       .textTheme
                       .bodyText2
@@ -106,57 +106,51 @@ class _HotDrinksDetailsState extends State<HotDrinksDetails> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   MaterialButton(
-                      child: Text("Chico"),
+                      child: Text("Blanco"),
                       highlightElevation: 3,
-                      color: _smallSelected
+                      color: _whiteSelected
                           ? Color.fromRGBO(151, 181, 230, .8)
                           : Colors.grey[300],
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       onPressed: () => {
                             setState(() {
-                              widget.drink.productSize = ProductSize.CH;
-                              widget.drink.productPrice =
-                                  widget.drink.productPriceCalculator();
-                              _smallSelected = true;
-                              _mediumSelected = false;
-                              _largeSelected = false;
+                              widget.cup.productColor = ProductColor.WHITE;
+                              _whiteSelected = true;
+                              _blackSelected = false;
+                              _blueSelected = false;
                             })
                           }),
                   MaterialButton(
-                      child: Text("Mediano"),
+                      child: Text("Negro"),
                       highlightElevation: 3,
-                      color: _mediumSelected
+                      color: _blackSelected
                           ? Color.fromRGBO(151, 181, 230, .8)
                           : Colors.grey[300],
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       onPressed: () => {
                             setState(() {
-                              widget.drink.productSize = ProductSize.M;
-                              widget.drink.productPrice =
-                                  widget.drink.productPriceCalculator();
-                              _smallSelected = false;
-                              _mediumSelected = true;
-                              _largeSelected = false;
+                              widget.cup.productColor = ProductColor.WHITE;
+                              _whiteSelected = false;
+                              _blackSelected = true;
+                              _blueSelected = false;
                             })
                           }),
                   MaterialButton(
-                      child: Text("Grande"),
+                      child: Text("Azul"),
                       highlightElevation: 3,
-                      color: _largeSelected
+                      color: _blueSelected
                           ? Color.fromRGBO(151, 181, 230, .8)
                           : Colors.grey[300],
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       onPressed: () => {
                             setState(() {
-                              widget.drink.productSize = ProductSize.G;
-                              widget.drink.productPrice =
-                                  widget.drink.productPriceCalculator();
-                              _smallSelected = false;
-                              _mediumSelected = false;
-                              _largeSelected = true;
+                              widget.cup.productColor = ProductColor.WHITE;
+                              _whiteSelected = false;
+                              _blackSelected = false;
+                              _blueSelected = true;
                             })
                           })
                 ],

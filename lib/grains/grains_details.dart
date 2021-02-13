@@ -1,25 +1,24 @@
-import '../models/product_hot_drinks.dart';
+import '../models/product_grains.dart';
 import 'package:flutter/material.dart';
 
-class HotDrinksDetails extends StatefulWidget {
-  final ProductHotDrinks drink;
-  HotDrinksDetails({Key key, @required this.drink}) : super(key: key);
+class GrainsDetails extends StatefulWidget {
+  final ProductGrains grain;
+  GrainsDetails({Key key, @required this.grain}) : super(key: key);
 
   @override
-  _HotDrinksDetailsState createState() => _HotDrinksDetailsState();
+  _GrainsDetailsState createState() => _GrainsDetailsState();
 }
 
-class _HotDrinksDetailsState extends State<HotDrinksDetails> {
-  var _smallSelected = true;
-  var _mediumSelected = false;
-  var _largeSelected = false;
+class _GrainsDetailsState extends State<GrainsDetails> {
+  var _cuartoSelected = true;
+  var _kiloSelected = false;
   var _isFav = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("${widget.drink.productTitle}"),
+          title: Text("${widget.grain.productTitle}"),
         ),
         body: Container(
           child: ListView(children: <Widget>[
@@ -35,7 +34,7 @@ class _HotDrinksDetailsState extends State<HotDrinksDetails> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image.network(
-                      "${widget.drink.productImage}",
+                      "${widget.grain.productImage}",
                       fit: BoxFit.cover,
                       height: 200,
                       width: 200,
@@ -48,7 +47,7 @@ class _HotDrinksDetailsState extends State<HotDrinksDetails> {
               Padding(
                 padding: EdgeInsets.only(top: 20, left: 20),
                 child: Text(
-                  "${widget.drink.productTitle}",
+                  "${widget.grain.productTitle}",
                   style: Theme.of(context)
                       .textTheme
                       .headline4
@@ -71,7 +70,7 @@ class _HotDrinksDetailsState extends State<HotDrinksDetails> {
             Padding(
               padding: EdgeInsets.only(top: 20, left: 20, right: 20),
               child: Text(
-                "${widget.drink.productDescription}",
+                "${widget.grain.productDescription}",
                 style: Theme.of(context)
                     .textTheme
                     .bodyText1
@@ -92,7 +91,7 @@ class _HotDrinksDetailsState extends State<HotDrinksDetails> {
               Padding(
                 padding: EdgeInsets.only(left: 80, top: 20, right: 20),
                 child: Text(
-                  "\$\ ${widget.drink.productPrice}",
+                  "\$\ ${widget.grain.productPrice}",
                   style: Theme.of(context)
                       .textTheme
                       .bodyText2
@@ -103,62 +102,42 @@ class _HotDrinksDetailsState extends State<HotDrinksDetails> {
             Padding(
               padding: EdgeInsets.only(left: 20, right: 80),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   MaterialButton(
-                      child: Text("Chico"),
+                      child: Text("Cuarto"),
                       highlightElevation: 3,
-                      color: _smallSelected
+                      color: _cuartoSelected
                           ? Color.fromRGBO(151, 181, 230, .8)
                           : Colors.grey[300],
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       onPressed: () => {
                             setState(() {
-                              widget.drink.productSize = ProductSize.CH;
-                              widget.drink.productPrice =
-                                  widget.drink.productPriceCalculator();
-                              _smallSelected = true;
-                              _mediumSelected = false;
-                              _largeSelected = false;
+                              widget.grain.productWeight = ProductWeight.CUARTO;
+                              widget.grain.productPrice =
+                                  widget.grain.productPriceCalculator();
+                              _cuartoSelected = true;
+                              _kiloSelected = false;
                             })
                           }),
                   MaterialButton(
-                      child: Text("Mediano"),
+                      child: Text("Kilo"),
                       highlightElevation: 3,
-                      color: _mediumSelected
+                      color: _kiloSelected
                           ? Color.fromRGBO(151, 181, 230, .8)
                           : Colors.grey[300],
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       onPressed: () => {
                             setState(() {
-                              widget.drink.productSize = ProductSize.M;
-                              widget.drink.productPrice =
-                                  widget.drink.productPriceCalculator();
-                              _smallSelected = false;
-                              _mediumSelected = true;
-                              _largeSelected = false;
+                              widget.grain.productWeight = ProductWeight.KILO;
+                              widget.grain.productPrice =
+                                  widget.grain.productPriceCalculator();
+                              _cuartoSelected = false;
+                              _kiloSelected = true;
                             })
                           }),
-                  MaterialButton(
-                      child: Text("Grande"),
-                      highlightElevation: 3,
-                      color: _largeSelected
-                          ? Color.fromRGBO(151, 181, 230, .8)
-                          : Colors.grey[300],
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      onPressed: () => {
-                            setState(() {
-                              widget.drink.productSize = ProductSize.G;
-                              widget.drink.productPrice =
-                                  widget.drink.productPriceCalculator();
-                              _smallSelected = false;
-                              _mediumSelected = false;
-                              _largeSelected = true;
-                            })
-                          })
                 ],
               ),
             ),

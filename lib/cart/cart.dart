@@ -33,7 +33,6 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(CUPPIN_BLUE),
         title: Text("Lista de compras", 
           style: TextStyle(color: Colors.white),),
         actions: <Widget>[

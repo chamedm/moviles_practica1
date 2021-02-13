@@ -13,6 +13,7 @@ class _HotDrinksDetailsState extends State<HotDrinksDetails> {
   var _smallSelected = true;
   var _mediumSelected = false;
   var _largeSelected = false;
+  var _isFav = false;
 
   @override
   Widget build(BuildContext context) {
@@ -43,16 +44,30 @@ class _HotDrinksDetailsState extends State<HotDrinksDetails> {
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(top: 20, left: 20),
-              child: Text(
-                "${widget.drink.productTitle}",
-                style: Theme.of(context)
-                    .textTheme
-                    .headline4
-                    .copyWith(fontWeight: FontWeight.bold),
+            Row(children: [
+              Padding(
+                padding: EdgeInsets.only(top: 20, left: 20),
+                child: Text(
+                  "${widget.drink.productTitle}",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline4
+                      .copyWith(fontWeight: FontWeight.bold),
+                ),
               ),
-            ),
+              Padding(
+                padding: EdgeInsets.only(top: 20),
+                child: IconButton(
+                    icon: Icon(_isFav
+                        ? Icons.favorite
+                        : Icons.favorite_border_outlined),
+                    onPressed: () {
+                      setState(() {
+                        _isFav = !_isFav;
+                      });
+                    }),
+              )
+            ]),
             Padding(
               padding: EdgeInsets.only(top: 20, left: 20, right: 20),
               child: Text(

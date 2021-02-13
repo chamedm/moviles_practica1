@@ -13,6 +13,7 @@ class _CupDetailsState extends State<CupDetails> {
   var _whiteSelected = true;
   var _blackSelected = false;
   var _blueSelected = false;
+  var _isFav = false;
 
   @override
   Widget build(BuildContext context) {
@@ -43,16 +44,30 @@ class _CupDetailsState extends State<CupDetails> {
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(top: 20, left: 20),
-              child: Text(
-                "${widget.cup.productTitle}",
-                style: Theme.of(context)
-                    .textTheme
-                    .headline4
-                    .copyWith(fontWeight: FontWeight.bold),
+            Row(children: [
+              Padding(
+                padding: EdgeInsets.only(top: 20, left: 20),
+                child: Text(
+                  "${widget.cup.productTitle}",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline4
+                      .copyWith(fontWeight: FontWeight.bold),
+                ),
               ),
-            ),
+              Padding(
+                padding: EdgeInsets.only(top: 20),
+                child: IconButton(
+                    icon: Icon(_isFav
+                        ? Icons.favorite
+                        : Icons.favorite_border_outlined),
+                    onPressed: () {
+                      setState(() {
+                        _isFav = !_isFav;
+                      });
+                    }),
+              )
+            ]),
             Padding(
               padding: EdgeInsets.only(top: 20, left: 20, right: 20),
               child: Text(
@@ -91,7 +106,7 @@ class _CupDetailsState extends State<CupDetails> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   MaterialButton(
-                      child: Text("White"),
+                      child: Text("Blanco"),
                       highlightElevation: 3,
                       color: _whiteSelected
                           ? Color.fromRGBO(151, 181, 230, .8)
@@ -107,7 +122,7 @@ class _CupDetailsState extends State<CupDetails> {
                             })
                           }),
                   MaterialButton(
-                      child: Text("Black"),
+                      child: Text("Negro"),
                       highlightElevation: 3,
                       color: _blackSelected
                           ? Color.fromRGBO(151, 181, 230, .8)
@@ -123,7 +138,7 @@ class _CupDetailsState extends State<CupDetails> {
                             })
                           }),
                   MaterialButton(
-                      child: Text("Blue"),
+                      child: Text("Azul"),
                       highlightElevation: 3,
                       color: _blueSelected
                           ? Color.fromRGBO(151, 181, 230, .8)

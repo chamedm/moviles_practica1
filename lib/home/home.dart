@@ -97,7 +97,8 @@ class _HomeState extends State<Home> {
   void _openGrainsPage() {
     final grainsList = ProductRepository.loadProducts(ProductType.GRANO);
     Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => GrainsPage(grainsList: grainsList)));
+        builder: (context) =>
+            GrainsPage(grainsList: grainsList, cart: cartItems)));
   }
 
   void _openCupsPage() {
